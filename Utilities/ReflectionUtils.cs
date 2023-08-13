@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class ReflectionUtils
 {

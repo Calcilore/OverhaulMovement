@@ -1,20 +1,20 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Common.Dodgerolls;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using TerrariaOverhaul.Common.Dodgerolls;
-using TerrariaOverhaul.Utilities;
+using OverhaulMovement.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerBunnyhopCombos : ModPlayer, IPlayerOnBunnyhopHook
 {
-	public static readonly SoundStyle BunnyhopComboSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/BunnyhopCombo") {
+	public static readonly SoundStyle BunnyhopComboSound = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Player/BunnyhopCombo") {
 		Volume = 0.175f,
 	};
-	public static readonly SoundStyle BunnyhopComboBreakSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/BunnyhopComboBreak") {
+	public static readonly SoundStyle BunnyhopComboBreakSound = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Player/BunnyhopComboBreak") {
 		Volume = 0.3f,
 		PitchVariance = 0.1f,
 	};

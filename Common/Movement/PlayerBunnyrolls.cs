@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
+using OverhaulMovement.Common.Dodgerolls;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Dodgerolls;
-using TerrariaOverhaul.Utilities;
+using OverhaulMovement.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerBunnyrolls : ModPlayer, IPlayerOnBunnyhopHook
 {
-	public static readonly SoundStyle BunnyrollSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/Bunnyroll") {
+	public static readonly SoundStyle BunnyrollSound = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Player/Bunnyroll") {
 		Volume = 0.9f,
 		PitchVariance = 0.2f,
 	};

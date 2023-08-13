@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public struct Vector2Int
 {

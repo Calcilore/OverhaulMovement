@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Utilities;
 using Terraria;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public static class VelocityUtils
 {

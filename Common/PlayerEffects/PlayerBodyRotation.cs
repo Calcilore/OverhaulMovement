@@ -1,16 +1,14 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Core.Configuration;
 using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Utilities;
+using OverhaulMovement.Utilities;
 
-namespace TerrariaOverhaul.Common.PlayerEffects;
+namespace OverhaulMovement.Common.PlayerEffects;
 
 public sealed class PlayerBodyRotation : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnablePlayerTilting = new(ConfigSide.ClientOnly, "PlayerVisuals", nameof(EnablePlayerTilting), () => true);
-
 	public float Rotation;
 	public float RotationOffsetScale;
 
@@ -29,7 +27,7 @@ public sealed class PlayerBodyRotation : ModPlayer
 			return;
 		}
 
-		if (RotationOffsetScale != 0f && EnablePlayerTilting) {
+		if (RotationOffsetScale != 0f && ClientConfig.Instance.EnablePlayerRotation) {
 			float movementRotation;
 
 			if (Player.OnGround()) {

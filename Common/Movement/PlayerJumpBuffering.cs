@@ -1,9 +1,9 @@
-﻿using Terraria;
+﻿using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
+using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerJumpBuffering : ModPlayer
 {

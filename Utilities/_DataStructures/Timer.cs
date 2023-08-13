@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 /// <summary> A game tick based timer. Saves a lot of troubles caused by entity component execution orders. </summary>
 public struct Timer

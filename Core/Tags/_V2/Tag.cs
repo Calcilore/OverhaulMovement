@@ -1,4 +1,4 @@
-﻿namespace TerrariaOverhaul.Core.Tags;
+﻿namespace OverhaulMovement.Core.Tags;
 
 public struct Tag
 {

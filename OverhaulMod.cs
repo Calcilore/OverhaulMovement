@@ -2,11 +2,11 @@
 using System.IO;
 using System.Reflection;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Core.Networking;
 using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Networking;
 
-namespace TerrariaOverhaul;
+namespace OverhaulMovement;
 
 public class OverhaulMod : Mod
 {

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class EntityExtensions
 {

@@ -8,7 +8,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Core.Networking;
+namespace OverhaulMovement.Core.Networking;
 
 public sealed class MultiplayerSystem : ModSystem
 {

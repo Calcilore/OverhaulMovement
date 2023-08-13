@@ -3,34 +3,33 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using OverhaulMovement.Common.Movement;
+using OverhaulMovement.Common.PlayerEffects;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Networking;
+using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Movement;
-using TerrariaOverhaul.Common.PlayerEffects;
-using TerrariaOverhaul.Content.Buffs;
-using TerrariaOverhaul.Core.AudioEffects;
-using TerrariaOverhaul.Core.Networking;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
 #pragma warning disable IDE0060 // Remove unused parameter
 
-namespace TerrariaOverhaul.Common.Dodgerolls;
+namespace OverhaulMovement.Common.Dodgerolls;
 
 public sealed class PlayerDodgerolls : ModPlayer
 {
-	public static readonly SoundStyle DodgerollSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/Armor", 3) {
+	public static readonly SoundStyle DodgerollSound = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Player/Armor", 3) {
 		Volume = 0.65f,
 		PitchVariance = 0.2f
 	};
-	public static readonly SoundStyle FailureSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/NoAmmo") {
+	public static readonly SoundStyle FailureSound = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Items/NoAmmo") {
 		Volume = 0.2f,
 		Pitch = 0.5f,
 		PitchVariance = 0.2f
 	};
-	public static readonly SoundStyle RechargedSound = new($"{nameof(TerrariaOverhaul)}/Common/Dodgerolls/DodgerollReady", 2) {
+	public static readonly SoundStyle RechargedSound = new($"{nameof(OverhaulMovement)}/Common/Dodgerolls/DodgerollReady", 2) {
 		Volume = 0.9f,
 		PitchVariance = 0.125f
 	};
@@ -62,8 +61,8 @@ public sealed class PlayerDodgerolls : ModPlayer
 	public override void Load()
 	{
 		// Make GUI-related sounds ignored by reverb & other filters.
-		AudioEffectsSystem.IgnoreSoundStyle(FailureSound);
-		AudioEffectsSystem.IgnoreSoundStyle(RechargedSound);
+		// AudioEffectsSystem.IgnoreSoundStyle(FailureSound);
+		// AudioEffectsSystem.IgnoreSoundStyle(RechargedSound);
 
 		DodgerollKey = KeybindLoader.RegisterKeybind(Mod, "Dodgeroll", Keys.LeftControl);
 
@@ -126,7 +125,7 @@ public sealed class PlayerDodgerolls : ModPlayer
 	{
 		bool isLocal = Player.IsLocal();
 
-		if (isLocal && !DodgeAttemptTimer.Active && DodgerollKey.JustPressed && (!Player.mouseInterface || !Main.playerInventory)) {
+		if (isLocal && !DodgeAttemptTimer.Active && DodgerollKey.JustPressed && (!Player.mouseInterface || !Main.playerInventory) && ServerConfig.Instance.EnableDodgeRolling) {
 			QueueDodgeroll((uint)(TimeSystem.LogicFramerate * 0.333f), Player.KeyDirection().X >= 0f ? Direction1D.Right : Direction1D.Left);
 		}
 
@@ -261,9 +260,6 @@ public sealed class PlayerDodgerolls : ModPlayer
 		// Progress the dodgeroll
 		DodgeTime += 1f / 60f;
 
-		// Prevent other actions
-		Player.GetModPlayer<PlayerClimbing>().ClimbCooldown.Set(1);
-
 		if (DodgeTime >= DodgeTimeMax) {
 			IsDodging = false;
 			Player.eocDash = 0;
@@ -276,16 +272,16 @@ public sealed class PlayerDodgerolls : ModPlayer
 
 	private void OnDodgeEntity(Player player, Entity entity)
 	{
-		if (!Main.dedServ && !player.HasBuff<CriticalJudgement>()) {
-			/*
-			SoundEngine.PlaySound(new SoundStyle($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Anime") {
-				Pitch = 0.10f,
-				Volume = 0.20f,
-			});
-			*/
-		}
-
-		player.AddBuff(ModContent.BuffType<CriticalJudgement>(), 90);
+		// if (!Main.dedServ && !player.HasBuff<CriticalJudgement>()) {
+		// 	/*
+		// 	SoundEngine.PlaySound(new SoundStyle($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Anime") {
+		// 		Pitch = 0.10f,
+		// 		Volume = 0.20f,
+		// 	});
+		// 	*/
+		// }
+		//
+		// player.AddBuff(ModContent.BuffType<CriticalJudgement>(), 90);
 	}
 
 	private static bool LateCanBeHitByEntity(Player player, Entity entity)

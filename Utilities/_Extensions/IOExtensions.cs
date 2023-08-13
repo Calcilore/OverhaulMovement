@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class IOExtensions
 {

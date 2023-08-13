@@ -8,47 +8,47 @@
 # Results of the last localization refresh
 
 ## de-DE
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***47.7%***
-- **Translated:** `84` out of `176` (`92` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## en-US
 - **Status:** ✅ Full!
 - **Completion:** ***100.0%***
-- **Translated:** `176` out of `176` (`0` missing!)
+- **Translated:** `21` out of `21` (`0` missing!)
 
 ## es-ES
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***47.7%***
-- **Translated:** `84` out of `176` (`92` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## fr-FR
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***47.2%***
-- **Translated:** `83` out of `176` (`93` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## it-IT
 - **Status:** ❌ Not even started!
 - **Completion:** ***0.0%***
-- **Translated:** `0` out of `176` (`176` missing!)
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## pl-PL
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***52.8%***
-- **Translated:** `93` out of `176` (`83` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## pt-BR
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***47.7%***
-- **Translated:** `84` out of `176` (`92` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## ru-RU
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***50.0%***
-- **Translated:** `88` out of `176` (`88` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 
 ## zh-Hans
-- **Status:** ⚠️ Incomplete!
-- **Completion:** ***51.7%***
-- **Translated:** `91` out of `176` (`85` missing!)
+- **Status:** ❌ Not even started!
+- **Completion:** ***0.0%***
+- **Translated:** `0` out of `21` (`21` missing!)
 

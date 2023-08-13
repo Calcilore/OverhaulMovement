@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Common.PlayerEffects;
+namespace OverhaulMovement.Common.PlayerEffects;
 
 public sealed class PlayerItemRotation : ModPlayer
 {

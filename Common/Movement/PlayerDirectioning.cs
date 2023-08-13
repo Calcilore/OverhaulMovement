@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Networking;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Hooks.Items;
-using TerrariaOverhaul.Core.Networking;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerDirectioning : ModPlayer
 {
@@ -166,7 +166,7 @@ public sealed class PlayerDirectioning : ModPlayer
 			return;
 		}
 
-		if (!Player.pulley && (!Player.mount.Active || Player.mount.AllowDirectionChange) && (Player.itemAnimation <= 1 || ICanTurnDuringItemUse.Invoke(Player.HeldItem, Player))) {
+		if (!Player.pulley && (!Player.mount.Active || Player.mount.AllowDirectionChange) && Player.itemAnimation <= 1 && ServerConfig.Instance.PlayerFacesMouse) {
 			if (directionOverride.AppliesToPlayer(Player)) {
 				Player.direction = (int)directionOverride.Value;
 			} else {

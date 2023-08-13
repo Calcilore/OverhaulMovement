@@ -1,15 +1,13 @@
-﻿using Terraria;
+﻿using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Time;
+using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
+using OverhaulMovement.Utilities;
 
-namespace TerrariaOverhaul.Common.Footsteps;
+namespace OverhaulMovement.Common.Footsteps;
 
 public sealed class PlayerFootsteps : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnablePlayerFootsteps = new(ConfigSide.ClientOnly, "Ambience", nameof(EnablePlayerFootsteps), () => true);
-
 	private const double FootstepCooldown = 0.1;
 
 	private byte stepState;
@@ -17,7 +15,7 @@ public sealed class PlayerFootsteps : ModPlayer
 
 	public override void PostItemCheck()
 	{
-		if (Main.dedServ || !EnablePlayerFootsteps) {
+		if (Main.dedServ || !ClientConfig.Instance.EnablePlayerFootsteps) {
 			return;
 		}
 

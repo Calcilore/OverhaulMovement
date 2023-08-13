@@ -7,7 +7,7 @@ using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace TerrariaOverhaul.Core.Debugging;
+namespace OverhaulMovement.Core.Debugging;
 
 partial class DebugSystem
 {
@@ -33,7 +33,7 @@ partial class DebugSystem
 
 	public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 	{
-		layers.Add(new LegacyGameInterfaceLayer($"{nameof(TerrariaOverhaul)}/Debug", () => {
+		layers.Add(new LegacyGameInterfaceLayer($"{nameof(OverhaulMovement)}/Debug", () => {
 			if (EnableDebugRendering) {
 				for (int i = 0; i < Main.maxPlayers; i++) {
 					var player = Main.player[i];

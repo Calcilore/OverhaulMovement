@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class IOUtils
 {

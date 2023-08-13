@@ -1,18 +1,18 @@
-﻿using Terraria.Audio;
+﻿using OverhaulMovement.Common.Footsteps;
+using OverhaulMovement.Common.Tags;
+using OverhaulMovement.Core.PhysicalMaterials;
+using OverhaulMovement.Core.Tags;
+using Terraria.Audio;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Footsteps;
-using TerrariaOverhaul.Common.Tags;
-using TerrariaOverhaul.Core.PhysicalMaterials;
-using TerrariaOverhaul.Core.Tags;
 
-namespace TerrariaOverhaul.Common.PhysicalMaterials;
+namespace OverhaulMovement.Common.PhysicalMaterials;
 
 public sealed class WoodPhysicalMaterial : PhysicalMaterial, ITileTagAssociated, IFootstepSoundProvider
 {
 	public TagData TileTag { get; } = OverhaulTileTags.Wood;
 
 	// Footsteps
-	public SoundStyle? FootstepSound { get; } = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Footsteps/Wood/Step", 11) {
+	public SoundStyle? FootstepSound { get; } = new($"{nameof(OverhaulMovement)}/Assets/Sounds/Footsteps/Wood/Step", 11) {
 		Volume = 0.5f,
 	};
 

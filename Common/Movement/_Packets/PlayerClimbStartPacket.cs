@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Core.Networking;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.ID;
-using TerrariaOverhaul.Core.Networking;
-using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Movement;
 

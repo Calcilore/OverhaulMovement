@@ -6,20 +6,20 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Dodgerolls;
-using TerrariaOverhaul.Common.PlayerEffects;
+using OverhaulMovement.Common.Dodgerolls;
+using OverhaulMovement.Common.Movement;
+using OverhaulMovement.Common.PlayerEffects;
+using OverhaulMovement.Common.Tags;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Networking;
+using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
 using TerrariaOverhaul.Common.Tags;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Core.Networking;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Movement;
 
 public sealed class PlayerClimbing : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableClimbing = new(ConfigSide.Both, "PlayerMovement", nameof(EnableClimbing), () => true);
-
 	private Vector2 climbStartPos;
 	private Vector2 climbStartVelocity;
 	private Vector2 climbEndPos;
@@ -65,7 +65,7 @@ public sealed class PlayerClimbing : ModPlayer
 
 	private void TryStartClimbing()
 	{
-		if (!EnableClimbing) {
+		if (!ServerConfig.Instance.EnableClimbing) {
 			return;
 		}
 

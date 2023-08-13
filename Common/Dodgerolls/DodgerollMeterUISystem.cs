@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
 using ReLogic.Content;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Dodgerolls;
+namespace OverhaulMovement.Common.Dodgerolls;
 
 [Autoload(Side = ModSide.Client)]
 public sealed class DodgerollMeterUISystem : ModSystem
@@ -26,7 +26,7 @@ public sealed class DodgerollMeterUISystem : ModSystem
 	{
 		meterTexture = Mod.Assets.Request<Texture2D>("Common/Dodgerolls/DodgerollMeter");
 
-		layer = new LegacyGameInterfaceLayer($"{nameof(TerrariaOverhaul)}: Dodgeroll Meter", () => {
+		layer = new LegacyGameInterfaceLayer($"{nameof(OverhaulMovement)}: Dodgeroll Meter", () => {
 			if (!meterTexture.IsLoaded) {
 				return true;
 			}

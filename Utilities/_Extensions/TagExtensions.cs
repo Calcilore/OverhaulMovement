@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using TerrariaOverhaul.Core.Tags;
+using OverhaulMovement.Core.Tags;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class TagExtensions
 {

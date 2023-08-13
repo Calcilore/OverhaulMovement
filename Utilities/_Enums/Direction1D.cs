@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public enum Direction1D : sbyte
 {

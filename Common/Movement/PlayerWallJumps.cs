@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Linq;
+using OverhaulMovement.Common.Dodgerolls;
+using OverhaulMovement.Common.Footsteps;
+using OverhaulMovement.Common.Movement;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Dodgerolls;
-using TerrariaOverhaul.Common.Footsteps;
 using TerrariaOverhaul.Common.Tags;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Movement;
 
 // This class implements both wall jumps and wall rolls.
 public class PlayerWallJumps : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableWallJumping = new(ConfigSide.Both, "PlayerMovement", nameof(EnableWallJumping), () => true);
-	public static readonly ConfigEntry<bool> EnableWallFlips = new(ConfigSide.Both, "PlayerMovement", nameof(EnableWallFlips), () => true);
-
 	public const float MinSpeedForWallRoll = 3f;
 
 	public override bool PreItemCheck()
@@ -45,7 +43,7 @@ public class PlayerWallJumps : ModPlayer
 		// They do not trigger dodgerolls.
 		bool ninjaJump = Player.controlUp && Player.EnumerateAccessories().Any(tuple => OverhaulItemTags.NinjaGear.Has(tuple.item.type));
 
-		if (!(ninjaJump ? EnableWallJumping : EnableWallFlips)) {
+		if (!(ninjaJump ? ServerConfig.Instance.EnableWallJumping : ServerConfig.Instance.EnableWallFlipping)) {
 			return;
 		}
 

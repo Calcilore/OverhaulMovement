@@ -1,18 +1,16 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Common.Movement;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Time;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Movement;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Core.Time;
 
-namespace TerrariaOverhaul.Common.PlayerEffects;
+namespace OverhaulMovement.Common.PlayerEffects;
 
 public class PlayerHeadRotation : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnablePlayerHeadRotation = new(ConfigSide.ClientOnly, "PlayerVisuals", nameof(EnablePlayerHeadRotation), () => true);
-
 	private static bool active;
 
 	private float headRotation;
@@ -60,7 +58,7 @@ public class PlayerHeadRotation : ModPlayer
 
 	public override void ModifyDrawInfo(ref PlayerDrawSet drawInfo)
 	{
-		if (!Main.gameMenu && EnablePlayerHeadRotation && active) {
+		if (!Main.gameMenu && ClientConfig.Instance.EnablePlayerHeadRotation && active) {
 			drawInfo.drawPlayer.headRotation = headRotation;
 		}
 	}

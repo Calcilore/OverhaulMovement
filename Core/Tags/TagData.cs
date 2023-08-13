@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TerrariaOverhaul.Core.Tags;
+namespace OverhaulMovement.Core.Tags;
 
 // Horrible. Taken from an old 1.4_contenttags draft of TML. And made worse.
 

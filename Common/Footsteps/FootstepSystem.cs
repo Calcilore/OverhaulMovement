@@ -1,13 +1,13 @@
 ﻿using System;
+using OverhaulMovement.Common.PhysicalMaterials;
+using OverhaulMovement.Core.PhysicalMaterials;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.PhysicalMaterials;
-using TerrariaOverhaul.Core.PhysicalMaterials;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Footsteps;
+namespace OverhaulMovement.Common.Footsteps;
 
 public class FootstepSystem : ModSystem
 {

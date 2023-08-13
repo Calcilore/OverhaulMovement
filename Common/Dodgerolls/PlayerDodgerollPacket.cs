@@ -1,10 +1,10 @@
 ﻿using System.IO;
+using OverhaulMovement.Core.Networking;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.ID;
-using TerrariaOverhaul.Core.Networking;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Dodgerolls;
+namespace OverhaulMovement.Common.Dodgerolls;
 
 public sealed class PlayerDodgerollPacket : NetPacket
 {

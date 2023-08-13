@@ -1,4 +1,4 @@
-﻿namespace TerrariaOverhaul.Core.PhysicalMaterials;
+﻿namespace OverhaulMovement.Core.PhysicalMaterials;
 
 public interface IPhysicalMaterialProvider
 {

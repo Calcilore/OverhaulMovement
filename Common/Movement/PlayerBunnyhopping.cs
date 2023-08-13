@@ -1,14 +1,12 @@
-﻿using Terraria;
+﻿using OverhaulMovement.Core.Configuration;
+using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Utilities;
+using OverhaulMovement.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerBunnyhopping : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableBunnyhopping = new(ConfigSide.Both, "PlayerMovement", nameof(EnableBunnyhopping), () => true);
-
 	public static float DefaultBoost => 0.8f;
 
 	public uint NumTicksOnGround { get; set; }
@@ -21,7 +19,7 @@ public sealed class PlayerBunnyhopping : ModPlayer
 
 	public override bool PreItemCheck()
 	{
-		if (!EnableBunnyhopping) {
+		if (!ServerConfig.Instance.EnableBunnyhopping) {
 			return base.PreItemCheck();
 		}
 

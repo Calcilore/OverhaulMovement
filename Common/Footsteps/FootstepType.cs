@@ -1,4 +1,4 @@
-﻿namespace TerrariaOverhaul.Common.Footsteps;
+﻿namespace OverhaulMovement.Common.Footsteps;
 
 public enum FootstepType
 {

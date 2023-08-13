@@ -1,6 +1,6 @@
 ﻿using Terraria.Audio;
 
-namespace TerrariaOverhaul.Common.Footsteps;
+namespace OverhaulMovement.Common.Footsteps;
 
 public interface IFootstepSoundProvider
 {

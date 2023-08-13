@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using OverhaulMovement.Core.Debugging;
 using Terraria;
-using TerrariaOverhaul.Core.Debugging;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 public static class MessageUtils
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace TerrariaOverhaul.Core.Networking;
+namespace OverhaulMovement.Core.Networking;
 
 public abstract class NetPacket : IDisposable
 {

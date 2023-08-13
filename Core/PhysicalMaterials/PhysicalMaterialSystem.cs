@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Core.PhysicalMaterials;
+namespace OverhaulMovement.Core.PhysicalMaterials;
 
 public sealed class PhysicalMaterialSystem : ModSystem
 {

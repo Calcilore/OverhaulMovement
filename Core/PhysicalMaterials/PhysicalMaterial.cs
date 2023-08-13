@@ -1,7 +1,7 @@
 ﻿using Terraria.Audio;
 using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Core.PhysicalMaterials;
+namespace OverhaulMovement.Core.PhysicalMaterials;
 
 public abstract class PhysicalMaterial : ModType
 {

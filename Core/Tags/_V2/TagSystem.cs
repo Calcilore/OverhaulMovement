@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Core.Tags;
+namespace OverhaulMovement.Core.Tags;
 
 public sealed class TagSystem : ModSystem
 {

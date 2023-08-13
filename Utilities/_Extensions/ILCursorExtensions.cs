@@ -3,9 +3,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
-using TerrariaOverhaul.Core.Debugging;
+using OverhaulMovement.Core.Debugging;
 
-namespace TerrariaOverhaul.Utilities;
+namespace OverhaulMovement.Utilities;
 
 internal static class ILCursorExtensions
 {

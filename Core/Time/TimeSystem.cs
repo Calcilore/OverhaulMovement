@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TerrariaOverhaul.Core.Time;
+namespace OverhaulMovement.Core.Time;
 
 public sealed class TimeSystem : ModSystem
 {

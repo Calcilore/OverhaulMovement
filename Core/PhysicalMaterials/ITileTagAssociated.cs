@@ -1,6 +1,6 @@
-﻿using TerrariaOverhaul.Core.Tags;
+﻿using OverhaulMovement.Core.Tags;
 
-namespace TerrariaOverhaul.Core.PhysicalMaterials;
+namespace OverhaulMovement.Core.PhysicalMaterials;
 
 public interface ITileTagAssociated
 {

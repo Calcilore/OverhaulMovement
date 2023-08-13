@@ -1,16 +1,14 @@
-﻿using Terraria;
+﻿using OverhaulMovement.Core.Configuration;
+using Terraria;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Configuration;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerAutoJump : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableAutoJump = new(ConfigSide.Both, "PlayerMovement", nameof(EnableAutoJump), () => true);
-
 	public override void ResetEffects()
 	{
-		if (EnableAutoJump) {
+		if (ServerConfig.Instance.EnableAutoJump) {
 			Player.autoJump = true;
 		}
 	}

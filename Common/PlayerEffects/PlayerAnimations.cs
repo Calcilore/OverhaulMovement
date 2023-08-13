@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using OverhaulMovement.Utilities;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.PlayerEffects;
+namespace OverhaulMovement.Common.PlayerEffects;
 
 public sealed class PlayerAnimations : ModPlayer
 {

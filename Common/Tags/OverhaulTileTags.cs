@@ -1,72 +1,72 @@
-﻿using Terraria.ID;
+﻿using OverhaulMovement.Core.Tags;
+using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Tags;
-using TerrariaOverhaul.Utilities;
-using Group = TerrariaOverhaul.Core.Tags.TileTags;
+using OverhaulMovement.Utilities;
+using Group = OverhaulMovement.Core.Tags.TileTags;
 
-namespace TerrariaOverhaul.Common.Tags;
+namespace OverhaulMovement.Common.Tags;
 
 public sealed class OverhaulTileTags : ILoadable
 {
 	/// <summary> Makes the tile count as something that would cause reverberation. </summary>
-	public static readonly TagData Reverb = ContentTags.Get<Group>(nameof(Reverb));
+	public static readonly TagData Reverb = ContentTags.Get<TileTags>(nameof(Reverb));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Dirt = ContentTags.Get<Group>(nameof(Dirt));
+	public static readonly TagData Dirt = ContentTags.Get<TileTags>(nameof(Dirt));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Stone = ContentTags.Get<Group>(nameof(Stone));
+	public static readonly TagData Stone = ContentTags.Get<TileTags>(nameof(Stone));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Grass = ContentTags.Get<Group>(nameof(Grass));
+	public static readonly TagData Grass = ContentTags.Get<TileTags>(nameof(Grass));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Sand = ContentTags.Get<Group>(nameof(Sand));
+	public static readonly TagData Sand = ContentTags.Get<TileTags>(nameof(Sand));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Snow = ContentTags.Get<Group>(nameof(Snow));
+	public static readonly TagData Snow = ContentTags.Get<TileTags>(nameof(Snow));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Wood = ContentTags.Get<Group>(nameof(Wood));
+	public static readonly TagData Wood = ContentTags.Get<TileTags>(nameof(Wood));
 
 	/// <summary> Affects footstep sounds. </summary>
-	public static readonly TagData Mud = ContentTags.Get<Group>(nameof(Mud));
+	public static readonly TagData Mud = ContentTags.Get<TileTags>(nameof(Mud));
 
 	/// <summary> Used for platforms. </summary>
-	public static readonly TagData AllowClimbing = ContentTags.Get<Group>(nameof(AllowClimbing));
+	public static readonly TagData AllowClimbing = ContentTags.Get<TileTags>(nameof(AllowClimbing));
 
 	/// <summary> Prevents water evaporation around this block. </summary>
-	public static readonly TagData Cold = ContentTags.Get<Group>(nameof(Cold));
+	public static readonly TagData Cold = ContentTags.Get<TileTags>(nameof(Cold));
 
 	/// <summary> Makes fire activate tiles like dynamite in wiring. </summary>
-	public static readonly TagData FireActivated = ContentTags.Get<Group>(nameof(FireActivated));
+	public static readonly TagData FireActivated = ContentTags.Get<TileTags>(nameof(FireActivated));
 
 	/// <summary> Tiles with this tag will not be destroyed by fire. Used by bushes & trees. </summary>
-	public static readonly TagData FireImmune = ContentTags.Get<Group>(nameof(FireImmune));
+	public static readonly TagData FireImmune = ContentTags.Get<TileTags>(nameof(FireImmune));
 
 	/// <summary> Makes the tile flammable. </summary>
-	public static readonly TagData Flammable = ContentTags.Get<Group>(nameof(Flammable));
+	public static readonly TagData Flammable = ContentTags.Get<TileTags>(nameof(Flammable));
 
 	/// <summary> Raises temperature, automatically results in <see cref="TileNoBeeHives"/> tag being added. </summary>
-	public static readonly TagData HeatSource = ContentTags.Get<Group>(nameof(HeatSource));
+	public static readonly TagData HeatSource = ContentTags.Get<TileTags>(nameof(HeatSource));
 
 	/// <summary> Bee hives never fall on it's own when close to this tile. </summary>
-	public static readonly TagData Jungle = ContentTags.Get<Group>(nameof(Jungle));
+	public static readonly TagData Jungle = ContentTags.Get<TileTags>(nameof(Jungle));
 
 	/// <summary> Like metallic, but *always* attracts lightning. </summary>
-	public static readonly TagData LightningRod = ContentTags.Get<Group>(nameof(LightningRod));
+	public static readonly TagData LightningRod = ContentTags.Get<TileTags>(nameof(LightningRod));
 
 	/// <summary> Makes tile attract lightning and conduct electricity. </summary>
-	public static readonly TagData Metallic = ContentTags.Get<Group>(nameof(Metallic));
+	public static readonly TagData Metallic = ContentTags.Get<TileTags>(nameof(Metallic));
 
 	/// <summary> Raises temperature, automatically results in <see cref="TileNoBeeHives"/> tag being added. </summary>
-	public static readonly TagData NoClimbing = ContentTags.Get<Group>(nameof(NoClimbing));
+	public static readonly TagData NoClimbing = ContentTags.Get<TileTags>(nameof(NoClimbing));
 
 	/// <summary> Tiles with this tag will not spread fire onto other blocks. Used for things that never actually get destroyed by fire, like bushes. </summary>
-	public static readonly TagData NoFireSpreading = ContentTags.Get<Group>(nameof(NoFireSpreading));
+	public static readonly TagData NoFireSpreading = ContentTags.Get<TileTags>(nameof(NoFireSpreading));
 
 	/// <summary> Monsters can spot players through this tile. </summary>
-	public static readonly TagData Transparent = ContentTags.Get<Group>(nameof(Transparent));
+	public static readonly TagData Transparent = ContentTags.Get<TileTags>(nameof(Transparent));
 
 	void ILoadable.Load(Mod mod)
 	{

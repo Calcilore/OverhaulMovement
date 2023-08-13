@@ -4,21 +4,18 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using OverhaulMovement.Core.Configuration;
+using OverhaulMovement.Core.Time;
+using OverhaulMovement.Utilities;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Core.Configuration;
-using TerrariaOverhaul.Core.Time;
-using TerrariaOverhaul.Utilities;
 
-namespace TerrariaOverhaul.Common.Movement;
+namespace OverhaulMovement.Common.Movement;
 
 public sealed class PlayerMovement : ModPlayer
 {
 	public static readonly int VelocityRecordSize = 5;
-
-	public static readonly ConfigEntry<bool> EnableVerticalAccelerationChanges = new(ConfigSide.Both, "PlayerMovement", nameof(EnableVerticalAccelerationChanges), () => true);
-	public static readonly ConfigEntry<bool> EnableHorizontalAccelerationChanges = new(ConfigSide.Both, "PlayerMovement", nameof(EnableHorizontalAccelerationChanges), () => true);
 
 	// The way to disable this has been removed due to vanilla jump velocity logic resetting velocity and clashing with many different features
 	//public static readonly ConfigEntry<bool> EnableJumpPhysicsImprovements = new(ConfigSide.Both, "PlayerMovement", nameof(EnableJumpPhysicsImprovements), () => true);
@@ -116,7 +113,7 @@ public sealed class PlayerMovement : ModPlayer
 
 			if (VanillaAccelerationTime > 0) {
 				VanillaAccelerationTime--;
-			} else if (!Player.slippy && !Player.slippy2 && EnableHorizontalAccelerationChanges) {
+			} else if (!Player.slippy && !Player.slippy2 && ServerConfig.Instance.EnableHorizontalMovementChanges) {
 				// Horizontal acceleration
 				if (onGround) {
 					Player.runAcceleration *= 2f;
@@ -141,7 +138,7 @@ public sealed class PlayerMovement : ModPlayer
 				Player.maxRunSpeed *= 0.6f;
 			}
 
-			if (EnableVerticalAccelerationChanges) {
+			if (ServerConfig.Instance.EnableVerticalMovementChanges) {
 				Player.maxFallSpeed = wingFall ? 10f : 1000f;
 
 				// Falling friction & speed limit
